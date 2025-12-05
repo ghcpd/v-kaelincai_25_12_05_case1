@@ -1,0 +1,5 @@
+Set-Location -Path 'c:\chatWorkspace\oswe-mini-m22a1s385'; python -m pytest -q --durations=10
+
+......
+
+6 passed in 0.05s

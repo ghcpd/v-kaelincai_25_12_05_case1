@@ -1,0 +1,9 @@
+{
+  "cases": [
+    {"name": "negative_edge_graph", "file": "../issue_project/data/graph_negative_weight.json"},
+    {"name": "positive_graph", "edges": [["A","B",5],["A","C",2],["C","B",1]]},
+    {"name": "negative_cycle", "edges": [["A","B",1],["B","C",-2],["C","A",-2]]},
+    {"name": "idempotent_case", "edges": [["X","Y",1]]},
+    {"name": "timeout_case", "edges": [["S","T",1]]}
+  ]
+}
