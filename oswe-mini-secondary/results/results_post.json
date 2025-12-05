@@ -1,0 +1,8 @@
+{
+  "tests": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "latency_ms": {"p50": 4.0, "p95": 8.0}
+}

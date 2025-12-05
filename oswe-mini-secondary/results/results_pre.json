@@ -1,0 +1,8 @@
+{
+  "tests": {
+    "total": 2,
+    "passed": 1,
+    "failed": 1,
+    "notes": "Legacy repo had failing negative-weight handling test or contradictory expectations"
+  }
+}
