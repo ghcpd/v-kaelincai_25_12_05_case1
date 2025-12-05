@@ -1,0 +1,7 @@
+[
+  {"case":"happy","idempotency":"key-happy","payload":{"when":"2025-12-10T10:00:00Z","user":"alice"}},
+  {"case":"duplicate","idempotency":"key-dup","payload":{"when":"2025-12-10T11:00:00Z","user":"bob"}},
+  {"case":"calendar_delay","idempotency":"key-delay","payload":{"when":"2025-12-10T12:00:00Z","user":"carol"}},
+  {"case":"calendar_fail","idempotency":"key-fail","payload":{"when":"2025-12-10T13:00:00Z","user":"dave"}},
+  {"case":"retry_backoff","idempotency":"key-retry","payload":{"when":"2025-12-10T14:00:00Z","user":"eve"}}
+]
