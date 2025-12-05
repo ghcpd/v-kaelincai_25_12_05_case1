@@ -1,0 +1,44 @@
+{
+  "test_cases": [
+    {
+      "name": "negative_edge_bellman_ford",
+      "graph_version": "v1_neg",
+      "source": "A",
+      "destination": "B",
+      "expected_path": ["A", "C", "D", "F", "B"],
+      "expected_cost": 1.0,
+      "expected_algorithm": "bellman_ford",
+      "graph_file": "graph_negative_weight.json"
+    },
+    {
+      "name": "simple_dijkstra",
+      "graph_version": "v1_pos",
+      "source": "A",
+      "destination": "B",
+      "expected_path": ["A", "C", "B"],
+      "expected_cost": 3.0,
+      "expected_algorithm": "dijkstra",
+      "graph_file": "graph_simple.json"
+    },
+    {
+      "name": "disconnected_no_path",
+      "graph_version": "v1_disc",
+      "source": "A",
+      "destination": "Z",
+      "expected_path": null,
+      "expected_cost": null,
+      "expected_error": "no_path_found",
+      "graph_file": "graph_disconnected.json"
+    },
+    {
+      "name": "negative_cycle_detection",
+      "graph_version": "v1_cycle",
+      "source": "A",
+      "destination": "C",
+      "expected_path": null,
+      "expected_cost": null,
+      "expected_error": "negative_cycle",
+      "graph_file": "graph_negative_cycle.json"
+    }
+  ]
+}
