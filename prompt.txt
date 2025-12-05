@@ -1,0 +1,64 @@
+Role & Scope
+Role: Senior architecture and delivery engineer.
+Mission: Analyze the legacy system and design a greenfield replacement (not an in-place refactor).
+Workspace: Create relevant project files under [model name].
+
+Object & Inputs
+Object: [issue_project]
+Input assets (optional): Codebase, APIs/Schemas, logs, monitoring, test commands, run recordings, etc. [[links or summaries]]
+
+Activities (Analyze → Conclude)
+3.1 Clarification & Data Collection
+
+List missing data/assumptions.
+Draft a collection checklist: code, logs, traffic, DB snapshots.
+3.2 Background Reconstruction (Model Output)
+
+From visible assets, infer legacy business context, core flows, boundaries, dependencies.
+Highlight uncertainties.
+3.3 Current-State Scan & Root-Cause Analysis
+
+Identify issues by category: Functionality, Performance, Reliability, Security, Maintainability, Cost.
+Provide a table: Category | Symptom | Likely Root Cause | Evidence / Needed Evidence.
+For high-priority issues: give hypothesis chains and validation methods; if issues are known, provide fix paths with causal chains.
+3.4 New System Design (Greenfield Replacement)
+
+Target state: capability boundaries, service decomposition, unified state machine, idempotency/retry/timeout/circuit-breaker strategies, compensation (Saga/outbox).
+Architecture and data flow: prose plus ASCII diagrams; key interfaces/Schemas/validation (including field constraints).
+Migration and parallel run (if needed): read/write cutover, backfill, dual-write/shadow traffic, rollback paths.
+3.5 Testing & Acceptance (Dynamically Generated)
+
+Derive at least 5 repeatable integration tests from crash points/risks.
+Each test case: Target issue | Preconditions/Data | Steps | Expected outcome | Observability assertions (logs/metrics/events).
+Coverage: idempotency; retry with backoff; timeout propagation/circuit breaking; compensation/Saga/outbox; audit/reconciliation; healthy path. If a risk does not exist, state why.
+Acceptance criteria: Given-When-Then or quantified SLO/SLA.
+AI Output Requirements (Appointment Scenario Focus)
+Lifecycle mapping: init → in-progress → success/failure; mark crash points (uncaught exceptions, timeout propagation, missing idempotency).
+Root-cause evidence: stack/log snippets; state snapshots (request ID, calendar response, DB state).
+Improvements: idempotency keys; retry + backoff; circuit breaker/timeout; transactional outbox or Saga compensation; unified state machine.
+Integration tests: as per 3.5.
+Structured logging schema: unique appointment/request ID; sensitive fields masked.
+One-click test fixture: single command runs all scenarios; outputs pass/fail and key metrics (success rate, retry counts, idempotency assertions).
+Deliverable Structure
+src/ # v2 integration/adaptation runtime code
+mocks/ # /api/v2 mock (immediate/pending/delayed)
+data/ # test_data.json, expected_postchange.json
+tests/ # test_post_change.py, etc.
+logs/ # log_post.txt
+results/ # results_post.json + timing
+requirements.txt
+setup.sh
+run_tests.sh
+Shared/ # Repo root
+test_data.json # ≥5 canonical cases
+run_all.sh # run Project A/B, collect artifacts
+compare_report.md # correctness diff, p50/p95 latency, errors/retries, rollout guidance
+results/ # results_pre.json, results_post.json, aggregated_metrics.json
+README.md # how to run/interpret, limits, rollout strategy
+
+Output Formatting
+
+Use structured numbering, tables preferred, explicit reasoning.
+If information is missing, provide clarifications and assumptions first.
+Describe scripts/commands with purpose.
+Provide API/data examples in JSON with field constraints.
