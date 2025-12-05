@@ -1,0 +1,8 @@
+{
+  "edges": [
+    {"source": "A", "target": "B", "weight": 1},
+    {"source": "B", "target": "C", "weight": 1},
+    {"source": "X", "target": "Y", "weight": 1},
+    {"source": "Y", "target": "Z", "weight": 1}
+  ]
+}
