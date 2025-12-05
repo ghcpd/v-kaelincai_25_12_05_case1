@@ -1,1 +1,0 @@
-[INFO] Post-change test run log placeholder

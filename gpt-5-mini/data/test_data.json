@@ -1,7 +1,0 @@
-[
-  {"case": "valid_simple", "payload": {"start": 1000, "end": 2000, "subject": "check"}},
-  {"case": "invalid_times", "payload": {"start": 2000, "end": 1000, "subject": "bad"}},
-  {"case": "idempotent_repeat", "payload": {"start": 3000, "end": 4000, "subject": "dup"}},
-  {"case": "transient_downstream", "payload": {"start": 5000, "end": 6000, "subject": "transient"}},
-  {"case": "concurrent", "payload": {"start": 7000, "end": 8000, "subject": "concurrent"}}
-]
