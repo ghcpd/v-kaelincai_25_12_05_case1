@@ -1,0 +1,14 @@
+{
+  "start": 1764897947,
+  "results": [],
+  "metrics": {
+    "exit_code": 0,
+    "tests": 13,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 13
+  },
+  "end": 1764897952,
+  "duration": 5
+}

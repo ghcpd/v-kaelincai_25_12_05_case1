@@ -1,0 +1,7 @@
+[
+  {"case":"basic_success","user_id":"user1","time_slot":"2025-12-05T10:00:00Z","idempotency_key":"key-1"},
+  {"case":"idempotent_repeat","user_id":"user1","time_slot":"2025-12-05T10:00:00Z","idempotency_key":"key-1"},
+  {"case":"calendar_fail","user_id":"user2","time_slot":"2025-12-05T11:00:00Z","idempotency_key":"key-2"},
+  {"case":"calendar_timeout","user_id":"user3","time_slot":"2025-12-05T12:00:00Z","idempotency_key":"key-3"},
+  {"case":"slow_path","user_id":"user4","time_slot":"2025-12-05T13:00:00Z","idempotency_key":"key-4"}
+]

@@ -1,0 +1,1 @@
+Shared resources for cross-team use: monitoring dashboards, schema definitions, runbooks.
