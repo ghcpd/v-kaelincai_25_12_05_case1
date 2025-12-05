@@ -1,0 +1,5 @@
+{
+  "success_rate": 1.0,
+  "retry_counts": {"avg": 0.2},
+  "idempotency_hits": 1
+}

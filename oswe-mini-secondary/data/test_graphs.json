@@ -1,0 +1,64 @@
+{
+  "cases": [
+    {
+      "name": "no_negative_simple",
+      "edges": [
+        {"source": "A", "target": "B", "weight": 5},
+        {"source": "A", "target": "C", "weight": 2},
+        {"source": "C", "target": "B", "weight": 2}
+      ],
+      "start": "A",
+      "goal": "B",
+      "expected_path": ["A","C","B"],
+      "expected_cost": 4.0
+    },
+    {
+      "name": "negative_edge_path",
+      "edges": [
+        {"source": "A", "target": "B", "weight": 5},
+        {"source": "A", "target": "C", "weight": 2},
+        {"source": "C", "target": "D", "weight": 1},
+        {"source": "D", "target": "F", "weight": -3},
+        {"source": "F", "target": "B", "weight": 1},
+        {"source": "A", "target": "E", "weight": 1},
+        {"source": "E", "target": "B", "weight": 6}
+      ],
+      "start": "A",
+      "goal": "B",
+      "expected_path": ["A","C","D","F","B"],
+      "expected_cost": 1.0
+    },
+    {
+      "name": "disconnected",
+      "edges": [
+        {"source": "A", "target": "B", "weight": 4},
+        {"source": "C", "target": "D", "weight": 2}
+      ],
+      "start": "A",
+      "goal": "D",
+      "expected_error": "no-path"
+    },
+    {
+      "name": "negative_cycle",
+      "edges": [
+        {"source": "A", "target": "B", "weight": 1},
+        {"source": "B", "target": "C", "weight": -2},
+        {"source": "C", "target": "A", "weight": 0}
+      ],
+      "start": "A",
+      "goal": "C",
+      "expected_error": "negative-cycle"
+    },
+    {
+      "name": "idempotency_case",
+      "edges": [
+        {"source": "X", "target": "Y", "weight": 2},
+        {"source": "Y", "target": "Z", "weight": 3}
+      ],
+      "start": "X",
+      "goal": "Z",
+      "expected_path": ["X","Y","Z"],
+      "expected_cost": 5.0
+    }
+  ]
+}
